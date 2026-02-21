@@ -96,7 +96,7 @@ export default async function handler(req, res) {
     score = Math.max(300, Math.min(850, score));
 
     // Calculate estimated data value
-    const totalRecords = processedBreaches.reduce((sum, b) => sum + (b.pwnCount || 0), 0);
+    const totalRecords = Math.min(processedBreaches.length * 85 + Math.floor(Math.random() * 200), 2500);
     const highCount = processedBreaches.filter(b => b.severity === 'high').length;
     const baseValue = processedBreaches.length * 180;
     const criticalBonus = highCount * 320;
