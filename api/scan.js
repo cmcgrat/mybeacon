@@ -106,7 +106,7 @@ export default async function handler(req, res) {
     const estimatedBrokers = Math.min(Math.round(processedBreaches.length * 3.5 + 12), 85);
 
     // ─── MAILCHIMP EMAIL CAPTURE (fire and forget) ───
-    const MAILCHIMP_API_KEY = 'fd6dcee6614e01410a22d6356bdadeba-us3';
+    const MAILCHIMP_API_KEY = process.env.MAILCHIMP_API_KEY;
     const MAILCHIMP_AUDIENCE_ID = 'becccf7b49';
     const MAILCHIMP_DC = 'us3';
 
